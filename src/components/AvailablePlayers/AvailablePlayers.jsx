@@ -1,15 +1,18 @@
-import React, { use } from 'react';
+import React, { use } from "react";
+import Player from "../Player/Player";
 
-const AvailablePlayers = ({promisePlayers}) => {
-    const players = use(promisePlayers);
-    console.log(players);
-    return (
-        <>
-            {
-                players.map(player => player.name)
-            }
-        </>
-    );
+const AvailablePlayers = ({ promisePlayers }) => {
+  const players = use(promisePlayers);
+  console.log(players);
+  return (
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-3 max-w-[1200px] mx-auto gap-5 font-sora mt-6">
+        {players.map((player) => (
+          <Player player={player}></Player>
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default AvailablePlayers;
